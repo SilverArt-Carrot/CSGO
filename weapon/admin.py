@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, Weapon, User, TestMD
+from .models import Category, Weapon, User
 
 
 # Register your models here.
@@ -34,4 +34,3 @@ class UserAdmin(admin.ModelAdmin):
 admin.site.register(Weapon, WeaponAdmin)
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(User, UserAdmin)
-admin.site.register(TestMD)

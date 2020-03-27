@@ -127,7 +127,4 @@ SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
 MEDIA_ROOT = os.path.join(BASE_DIR, r'csgo\static\csgo\images')
 
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
-# MEDIA_URL = '/media/'
-
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')

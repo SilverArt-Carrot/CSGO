@@ -1,5 +1,4 @@
 from django.db import models
-from mdeditor.fields import MDTextField
 
 
 # Create your models here.
@@ -27,6 +26,3 @@ class Weapon(models.Model):
         return self.gun
 
 
-class TestMD(models.Model):
-    name = models.CharField(max_length=20)
-    content = MDTextField()
