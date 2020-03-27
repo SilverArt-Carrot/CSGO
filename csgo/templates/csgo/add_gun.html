@@ -1,0 +1,28 @@
+{% extends 'csgo/base.html' %}
+
+{% block name %}欢迎，亲爱的&nbsp;
+{{username}}
+{% endblock name %}
+
+{% block content %}
+<p>&nbsp;</p>
+<h1>添加新枪</h1>
+<form action="{% url 'csgo:okk_for_add_gun' %}" method="post" >
+    {% csrf_token %}
+    武器名称：<input type="text" name="name" value="">
+    <hr />
+    武器类型：
+    <select name="cate">
+        <option value="步枪">步枪</option>
+        <option value="手枪">手枪</option>
+        <option value="微型冲锋枪">微型冲锋枪</option>
+        <option value="霰弹枪">霰弹枪</option>
+        <option value="机枪">机枪</option>
+        <option value="刀">刀</option>
+    </select>
+    <hr/>
+    <input type="file"  name="img">
+    <hr>
+    <input type="submit" value="提交" formenctype="multipart/form-data">
+</form>
+{% endblock content %}

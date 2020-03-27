@@ -1,0 +1,16 @@
+{% extends 'csgo/base.html' %}
+
+{% block name %}欢迎，亲爱的&nbsp;
+{{username}}
+{% endblock name %}
+
+{% block content %}
+<p>&nbsp;</p>
+{% load static %}
+{% for pistol in pistol_list %}
+    <div class="instance">
+        <img src="/static/csgo/images/{{pistol.name}}.png" >
+    </div>
+    <center><h3>{{pistol.name}}</h3></center>
+{% endfor %}
+{% endblock content %}

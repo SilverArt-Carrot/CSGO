@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    {% load static %}
+    <script src="{% static 'weapon/js/weapon.js' %}"></script>
+</head>
+<body>
+<h2>欢迎你，新用户</h2><hr>
+<form  name='register' onsubmit="return verify_register()" action="{% url 'weapon:okk2' %}" method="post">
+    {% csrf_token %}
+    用户名：<input type="text" name="username" value=""><hr>
+    密码：<input type="text" name="password" value=""><hr>
+    验证码：<input type="text" name="verify_code" value="">
+    <span><img src="{% url 'weapon:get_verify_code' %}"></span>&nbsp; {{flag}}<hr>
+    <input type="submit" value="注册">
+</form>
+</body>
+</html>

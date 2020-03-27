@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load static %}
+    <script src="{% static 'weapon/js/weapon.js' %}"></script>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+{% if weapon_category_list %}
+    <ul>
+    {% for wc in weapon_category_list %}
+        <li><button  id="{{wc.id}}" onclick="display_weapons(this)">{{ wc.cate }}</button></li><hr>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No weapon are available.</p>
+{% endif %}
+<ul id='display'></ul>
+</body>
+</html>

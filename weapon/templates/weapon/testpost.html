@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>添加新枪</h1>
+<form action="{% url 'weapon:okk' %}" method="post">
+    {% csrf_token %}
+    武器名称：<input type="text" name="gun" value=""><hr/>
+    武器类型：<input type="text" name="which_cate" value=""><hr/>
+
+    <input type="submit" value="提交">
+
+</form>
+</body>
+</html>

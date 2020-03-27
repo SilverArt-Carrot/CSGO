@@ -1,0 +1,20 @@
+{% extends 'csgo/base.html' %}
+
+{% block name %}欢迎，亲爱的&nbsp;
+{{username}}
+{% endblock name %}
+
+{% block content %}
+{% load static %}
+<script src="{% static 'csgo/js/csgo.js' %}"></script>
+<p>&nbsp;</p>
+<h2>欢迎你，新用户</h2><hr>
+<form  name='register' onsubmit="return verify_register()" action="{% url 'csgo:okk_for_register' %}" method="post">
+    {% csrf_token %}
+    用户名：<input type="text" name="username" value=""><hr>
+    密码：<input type="text" name="password" value=""><hr>
+    验证码：<input type="text" name="verify_code" value="">
+    <span><img src="{% url 'csgo:get_verify_code' %}"></span>&nbsp; {{flag}}<hr>
+    <input type="submit" value="注册">
+</form>
+{% endblock content %}

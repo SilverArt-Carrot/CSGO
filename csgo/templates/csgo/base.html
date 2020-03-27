@@ -1,0 +1,54 @@
+ <!DOCTYPE html>
+ <html>
+ <meta charset="utf-8">
+
+ <head>
+     <title></title>
+ </head>
+ {% load static %}
+ <link rel="stylesheet" type="text/css" href="{% static 'csgo/css/style.css' %}">
+
+ <body>
+     <div class="wrapper">
+         <div class="display_user">
+             <h3>
+                 {% block name %}
+
+                 {% endblock name %}
+             </h3>
+         </div>
+         <div class="header">
+             <center class="log"><img src="{% static 'csgo/images/logo.png' %}"></center>
+             <center>
+                 <ul class='user'>
+                     <li><a href="{% url 'csgo:login' %}"><strong>登录</strong></a></li>
+                     <li><a href="{% url 'csgo:register' %}"><strong>注册</strong></a></li>
+                     <li><a href="{% url 'csgo:logout' %}"><strong>登出</strong></a></li>
+                 </ul>
+             </center>
+         </div>
+         <!--背景图片-->
+         <div id="web_bg" style="background-image: url({% static 'csgo/images/noname2.jpg' %});"></div>
+         <div class="menu">
+             <ul class="menubar">
+                 <li class="menu-value"><a href="{% url 'csgo:index' %}">武器分类</a></li>
+                 <li class=""><a href="{% url 'csgo:rifle' %}">步枪</a></li>
+                 <li class=""><a href="{% url 'csgo:pistol' %}">手枪</a></li>
+                 <li class=""><a href="{% url 'csgo:submachine_gun' %}">微型冲锋枪</a></li>
+                 <li class=""><a href="{% url 'csgo:shotgun' %}">霰弹枪</a></li>
+                 <li class=""><a href="{% url 'csgo:machine_gun' %}">机枪</a></li>
+                 <li class=""><a href="{% url 'csgo:knife' %}">刀</a></li>
+                 <li class="menu-value"><a href="{% url 'csgo:add_gun' %}">添加武器</a></li>
+             </ul>
+         </div>
+         <center>
+             <div class="content">
+                 {% block content %}
+                 {% endblock content %}
+             </div>
+         </center>
+         <div class='footer'></div>
+     </div>
+ </body>
+
+ </html>

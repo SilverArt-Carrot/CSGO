@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>你好，{{username}}</h2>
+<h3>在添加新武器之前，你必须登录</h3>
+<a href="{% url 'weapon:register' %}">注册&nbsp;&nbsp;&nbsp;&nbsp;</a>
+<a href="{% url 'weapon:login' %}">登录&nbsp;&nbsp;&nbsp;&nbsp;</a>
+<a href="{% url 'weapon:logout' %}">登出</a>
+<hr>
+<button><a href="{% url 'weapon:content' %}">查看武器</a></button>
+<hr>
+<a href="{% url 'weapon:testpost' %}">添加新枪</a>
+</body>
+</html>
